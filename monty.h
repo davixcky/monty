@@ -1,6 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
-
+#define _GNU_SOURCE
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -11,6 +11,7 @@ typedef struct setting
 	char *type;
 	size_t len;
 	unsigned int line_number;
+	char *name_file;
 } setting_t;
 
 extern setting_t info;
@@ -57,6 +58,17 @@ int to_number(char *number_string, char *status);
 /* errors.c */
 void malloc_error();
 void error_on_line(unsigned int line, char *opcode);
+void number_arguments_error();
+void file_error();
 
+/* utils.c*/
+int _isspace(int c);
+int _is_empty(char *s);
+char *ft_strdup(char *src);
+
+/* opcode_.c*/
+void (*get_format(char *format))(stack_t **, unsigned int);
+
+/*string_utils.c*/
 
 #endif /* MONTY_H */
