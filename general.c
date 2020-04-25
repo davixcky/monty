@@ -1,6 +1,12 @@
 #include "monty.h"
 #include "stack.h"
 #include "queue.h"
+void nop(stack_t **head, unsigned int line_number)
+{
+	(void) head;
+	(void) line_number;
+	return;
+}
 
 void print_all(stack_t **head, unsigned int line_number)
 {
