@@ -56,9 +56,7 @@ void s_swap(stack_t **head)
 	stack_t *tail;
 	int n;
 
-	tail = *head;
-	while(tail->next != NULL)
-		tail = tail->next;
+	tail = *info.tail_list;
 
 	n = tail->n;
 	tail->n = tail->prev->n;

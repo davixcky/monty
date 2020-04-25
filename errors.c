@@ -29,6 +29,12 @@ void pop_error()
 	exit(EXIT_FAILURE);
 
 }
+
+void swap_error()
+{
+	fprintf(stderr,"L%d: can't swap, stack too short\n", info.line_number);
+	exit(EXIT_FAILURE);
+}
 void pint_error()
 {
 	fprintf(stderr,"L%d: can't pint, stack empty\n", info.line_number);

@@ -70,7 +70,8 @@ void swap(stack_t **head, unsigned int line_number)
 
 	if (info.len < 2)
 	{
-		//asprintf(&msg, "L%u: can't swap, stack too short", line_number);
+		free_all(1,1,1,1,1);
+		swap_error();
 	}
 
 	if (strcmp(info.type, "stack") == 0)

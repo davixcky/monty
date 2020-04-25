@@ -54,6 +54,5 @@ stack_t * new_node_(int n)
 	new_node->next = NULL;
 	new_node->prev = NULL;
 	return (new_node);
-
 }
 
