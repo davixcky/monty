@@ -10,7 +10,7 @@ void parser(char *buffer_line, char **pieces)
 	i = 0;
 	/* at max only 3 letters*/
 	info.number_args = 0;
-	while (piece != NULL && i < 3)
+	while (piece != NULL && i < 2)
 	{
 		if (_is_empty(buffer_line) == 0)
 		{

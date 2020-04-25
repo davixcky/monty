@@ -81,7 +81,7 @@ int _is_empty(char *s);
 char *ft_strdup(char *src);
 void free_(char **parsed_buffer);
 void free_2_(char ***parsed_buffer);
-char ** mall_c();
+char ** mall_c(int a);
 void free_all(int, int, int, int);
 void fill_info(char ***, FILE **, char **, char **);
 

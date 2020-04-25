@@ -14,6 +14,8 @@ void print_all(stack_t **head, unsigned int line_number)
 
 void push(stack_t **head, unsigned int line_number)
 {
+	(void) line_number;
+
 	stack_t *new_node, *prev;
 	char **args = *info.arguments_;
 	printf("dentro del push info.arg %s\n",args[1]);
@@ -40,7 +42,7 @@ void push(stack_t **head, unsigned int line_number)
 
 void pop(stack_t **head, unsigned int line_number)
 {
-	char *msg;
+	(void) line_number;
 
 	if (info.len == 0)
 	{
@@ -57,7 +59,7 @@ void pop(stack_t **head, unsigned int line_number)
 
 void pint(stack_t **head, unsigned int line_number)
 {
-	char *msg;
+	(void) line_number;
 
 	if (info.len == 0)
 	{
@@ -73,7 +75,7 @@ void pint(stack_t **head, unsigned int line_number)
 
 void swap(stack_t **head, unsigned int line_number)
 {
-	char *msg;
+	(void) line_number;
 
 	if (info.len < 2)
 	{

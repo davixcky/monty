@@ -2,7 +2,7 @@
 
 int main(int argc, char * argv[])
 {
-	stack_t * head_list;
+
 	FILE *file_;
 	char *buffer_line, *cpy_line, **arguments_;
 	size_t n_bytes_line, largo;
@@ -10,7 +10,7 @@ int main(int argc, char * argv[])
 
 	buffer_line = NULL, n_bytes_line = 0;
 	largo = 0;
-	head_list = NULL;
+	info.head_list = NULL;
 
 	if (argc != 2)
 		number_arguments_error();
@@ -18,8 +18,6 @@ int main(int argc, char * argv[])
 	file_ = fopen(argv[1], "r");
 	if (file_ == NULL)
 		file_error(argv[1]);
-
-	arguments_ = mall_c();
 
 	info.line_number = 0;
 	while (1)
@@ -34,6 +32,7 @@ int main(int argc, char * argv[])
 		{
 			if (_is_empty(buffer_line) == 1)
 				continue;
+			arguments_ = mall_c(2);
 			cpy_line = ft_strdup(buffer_line);
 			parser(cpy_line, arguments_);
 			printf("----------------------------\n");
@@ -46,9 +45,8 @@ int main(int argc, char * argv[])
 			f = get_format(arguments_[0]);
 			if (f == NULL)
 				unknown_ins();
-
+			f(info.head_list, info.line_number);
 			free_all(1,1,0,0);
-			arguments_ = mall_c();
 		}
 
 	}
