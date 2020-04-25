@@ -15,21 +15,20 @@ void print_all(stack_t **head, unsigned int line_number)
 void push(stack_t **head, unsigned int line_number)
 {
 	(void) line_number;
-
+	int n;
 	stack_t *new_node, *prev;
 	char **args = *info.arguments_;
 	printf("dentro del push info.arg %s\n",args[1]);
-	if (check_argument("push") != 1)
+	if (check_argument("push") != 1 || to_number(&n) != 1)
 	{
-		// || to_number(&n) != 1)
 		printf("entro aqui\n");
 		invalid_args();
 	}
 	info.len++;
 	new_node = new_node_(atoi(args[1]));
-	if(head == NULL)
+	if (head == NULL)
 	{
-		head = &new_node;
+		*head = new_node;
 		return;
 	}
 	/*move only if args is valid*/

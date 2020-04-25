@@ -23,18 +23,18 @@ void s_pop(stack_t **head)
 void s_print_all(stack_t **head)
 {
 	stack_t *tail;
-
+	printf("entro al stack print\n");
 	tail = *head;
 	while(tail->next != NULL)
 		tail = tail->next;
 
 	while(tail != *head)
 	{
-		printf("%d\n", tail->n);
+		printf("valor en stack es %d\n", tail->n);
 		tail = tail->prev;
 	}
 
-	printf("%d\n", tail->n);
+	printf("valor en el stack es %d\n", tail->n);
 }
 
 

@@ -62,15 +62,15 @@ char ** mall_c(int a)
 	if (arguments_ == NULL)
 	{
 		if (a == 1)
-			free_all(1,1,1,1);
+			free_all(1,1,1,1,1);
 		if (a == 2)
-			free_all(0,0,0,1);
+			free_all(0,0,0,1,1);
 		malloc_error();
 	}
 	return arguments_;
 }
 
-void free_all(int a, int b, int c, int d)
+void free_all(int a, int b, int c, int d, int e)
 {
 	if (info.arguments_ != NULL && a == 1)
 		free_2_(info.arguments_),free(*info.arguments_), *info.arguments_ = NULL;
@@ -83,6 +83,9 @@ void free_all(int a, int b, int c, int d)
 
 	if (info.buffer_line != NULL && d == 1)
 		free(info.buffer_line), info.buffer_line = NULL;
+
+	if (info.head_list != NULL && e == 1)
+		free_dlistint();
 }
 void prueba(stack_t ** stack, unsigned int integer_)
 {
@@ -98,7 +101,7 @@ void fill_info(char ***arguments_, FILE **file_, char **buffer_line, char **cpy_
 	args = *arguments_;
 
 	info.line_number++;
-	info.type = args[0];
+	info.type = "stack";
 	if (info.arguments_ == NULL)
 		info.arguments_ = arguments_;
 	info.file_ = *file_;

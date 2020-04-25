@@ -54,7 +54,7 @@ stack_t * new_node_(int n)
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
-		free_all(1,1,1,1);
+		free_all(1,1,1,1,1);
 		malloc_error();
 	}
 	new_node->n = n;
@@ -62,4 +62,20 @@ stack_t * new_node_(int n)
 	new_node->prev = NULL;
 	return (new_node);
 
+}
+
+
+void free_dlistint()
+{
+	stack_t *temp, *head;
+	temp = *info.head_list;
+	head = *info.head_list;
+	while (head && head->next)
+	{
+		head = head->next;
+		free(temp);
+		temp = head;
+	}
+	free(*info.head_list);
+	*info.head_list = NULL;
 }

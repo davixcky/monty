@@ -66,6 +66,7 @@ void add(stack_t **head, unsigned int line_number);
 int to_number(int *number);
 int check_argument(char *opcode);
 stack_t * new_node_(int n);
+void free_dlistint();
 
 
 /* errors.c */
@@ -83,7 +84,7 @@ char *ft_strdup(char *src);
 void free_(char **parsed_buffer);
 void free_2_(char ***parsed_buffer);
 char ** mall_c(int a);
-void free_all(int, int, int, int);
+void free_all(int, int, int, int, int);
 void fill_info(char ***, FILE **, char **, char **);
 
 /* opcode_.c*/

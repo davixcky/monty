@@ -10,7 +10,10 @@ int main(int argc, char * argv[])
 
 	buffer_line = NULL, n_bytes_line = 0;
 	largo = 0;
-	info.head_list = NULL;
+	//	info.head_list = NULL;
+	stack_t * head_list;
+	head_list = NULL;
+	info.head_list = &head_list;
 
 	if (argc != 2)
 		number_arguments_error();
@@ -24,7 +27,7 @@ int main(int argc, char * argv[])
 	{
 		if (getline(&buffer_line, &n_bytes_line, file_) == EOF)
 		{
-			free_all(1,1,1,1);
+			free_all(1,1,1,1,1);
 			break;
 		}
 
@@ -46,7 +49,7 @@ int main(int argc, char * argv[])
 			if (f == NULL)
 				unknown_ins();
 			f(info.head_list, info.line_number);
-			free_all(1,1,0,0);
+			free_all(1,1,0,0,0);
 		}
 
 	}

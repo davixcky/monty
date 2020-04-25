@@ -15,7 +15,7 @@ void number_arguments_error()
 void unknown_ins()
 {
 	fprintf(stderr, "L%u: unknown instruction %s\n", info.line_number, info.type);
-	free_all(1,1,1,1);
+	free_all(1,1,1,1,1);
 	exit(EXIT_FAILURE);
 }
 void file_error(char *file)
@@ -27,6 +27,6 @@ void file_error(char *file)
 void invalid_args()
 {
 	fprintf(stderr,"L%d: usage: push integer\n", info.line_number);
-	free_all(1,1,1,1);
+	free_all(1,1,1,1,1);
 	exit(EXIT_FAILURE);
 }

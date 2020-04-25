@@ -5,12 +5,13 @@ void (*get_format(char *formato))(stack_t **, unsigned int)
 	int i;
 
 	instruction_t opcodes_cases[] = {
-		{"push", prueba},
+		{"push", push},
+		{"pall",print_all},
 		{"NULLo", NULL}
 	};
 
 	i = 0;
-	while (i < 2)
+	while (i < 3)
 	{
 		printf("formato es %s \n", formato);
 		printf("%d valor de strcmp\n",strcmp(opcodes_cases[i].opcode, formato) );
