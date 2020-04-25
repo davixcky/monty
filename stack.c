@@ -5,7 +5,12 @@ void s_pop(stack_t **head)
 {
 	(void) head;
 	stack_t *second_last;
-
+	if (info.len == 1)
+	{
+		free(*info.tail_list), *info.tail_list = NULL;
+		*info.head_list = NULL;
+		return;
+	}
 	second_last = (*info.tail_list)->prev;
 	if (second_last != NULL)
 		second_last->next = NULL;

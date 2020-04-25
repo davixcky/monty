@@ -1,14 +1,14 @@
+pop
 push 1
+pop
 push 2
 push 3
-pall
+push 4
 pop
 pall
-push ebbeb jujo
+hehehheehheh hehe hehe 
 pint
+push heheh 0
 pall
-push hermoso 0
-push bebe 0
-bebe
 
 
