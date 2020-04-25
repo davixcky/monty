@@ -23,7 +23,11 @@ void file_error(char *file)
 	fprintf(stderr, "Error: Can't open file %s\n", file);
 	exit(EXIT_FAILURE);
 }
-
+void pint_error()
+{
+	fprintf(stderr,"L%d: can't pint, stack empty\n", info.line_number);
+	exit(EXIT_FAILURE);
+}
 void invalid_args()
 {
 	fprintf(stderr,"L%d: usage: push integer\n", info.line_number);

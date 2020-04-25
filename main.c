@@ -5,17 +5,17 @@ int main(int argc, char * argv[])
 
 	FILE *file_;
 	char *buffer_line, *cpy_line, **arguments_;
-	size_t n_bytes_line, largo;
+	size_t n_bytes_line;
 	void (*f)(stack_t **, unsigned int);
 
 	buffer_line = NULL, n_bytes_line = 0;
-	largo = 0;
 	//	info.head_list = NULL;
 	stack_t * head_list, *tail_list;
 	head_list = NULL, tail_list = NULL;
 	info.head_list = &head_list;
 	info.tail_list = &tail_list;
 	info.type = "stack";
+	info.len = 0;
 	if (argc != 2)
 		number_arguments_error();
 
@@ -48,9 +48,8 @@ int main(int argc, char * argv[])
 			f = get_format(arguments_[0]);
 			if (f == NULL)
 				unknown_ins();
-
 			f(info.head_list, info.line_number);
-
+			info.line_number++;
 			free_all(1,1,0,0,0);
 		}
 

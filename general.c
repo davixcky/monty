@@ -16,7 +16,6 @@ void push(stack_t **head, unsigned int line_number)
 {
 	(void) line_number;
 	int n;
-	char **args = *info.arguments_;
 	if (check_argument("push") != 1 || to_number(&n) != 1)
 	{
 		invalid_args();
@@ -47,7 +46,8 @@ void pint(stack_t **head, unsigned int line_number)
 
 	if (info.len == 0)
 	{
-		//asprintf(&msg, "L%u: can't pint, stack empty", line_number);
+		free_all(1,1,1,1,1);
+		pint_error();
 	}
 
 	if (strcmp(info.type, "stack") == 0)

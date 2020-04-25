@@ -7,6 +7,7 @@ void (*get_format(char *formato))(stack_t **, unsigned int)
 	instruction_t opcodes_cases[] = {
 		{"push", push},
 		{"pall",print_all},
+		{"pint",pint},
 		{"NULLo", NULL}
 	};
 

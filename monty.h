@@ -73,11 +73,11 @@ stack_t *add_dnodeint_end(stack_t **head, int n);
 /* errors.c */
 void malloc_error();
 void invalid_args();
-void custom_error(char *msg);
-
+void pint_error();
 void number_arguments_error();
 void file_error(char *file);
 void unknown_ins();
+
 /* utils.c*/
 int _isspace(int c);
 int _is_empty(char *s);

@@ -96,11 +96,7 @@ void prueba(stack_t ** stack, unsigned int integer_)
 }
 void fill_info(char ***arguments_, FILE **file_, char **buffer_line, char **cpy_line)
 {
-	char **args;
 
-	args = *arguments_;
-
-	info.line_number++;
 	info.type = "stack";
 	if (info.arguments_ == NULL)
 		info.arguments_ = arguments_;
