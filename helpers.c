@@ -1,24 +1,35 @@
 #include "monty.h"
 #include <ctype.h>
 
-int to_number(char *number_string, int *number)
+int to_number(int *number)
 {
 	char *tmp;
+	char **args;
 
-	if (number_string == NULL)
+	args = *info.arguments_;
+
+	if (args[1] == NULL)
+	{
+		printf("encontro nullo en to_number\n");
 		return (0);
+	}
 
-	for (tmp = number_string; *tmp != '\0'; tmp++)
+	for (tmp = args[1]; *tmp != '\0'; tmp++)
 	{
 		if (*tmp == '-' || *tmp == '+')
 			continue;
 
-		if (!isdigit(*tmp))
+		if (isdigit(*tmp) == 0)
+		{
+			printf("no es un digito\n");
 			return (0);
+		}
 	}
 
-	*number = atoi(number_string);
+	*number = atoi(args[1]);
+	printf("exito\n");
 	return (1);
+	/*1 sucesss 0 no digit*/
 }
 
 int check_argument(char *op_code)
@@ -27,8 +38,28 @@ int check_argument(char *op_code)
 	int i;
 
 	for (i = 0; codes[i] != NULL; i++)
-		if (strcmp(codes[i], op_code) == 0)
-			return (info.arg == NULL);
+		if (strcmp(op_code,codes[i]) == 0)
+		{
+			printf("exito encontro en check\n");
+			return (1);
+		}
+	printf("fracaso check\n");
+	return (0);/* 1 success 0 otherwise*/
+}
 
-	return (-1);
+stack_t * new_node_(int n)
+{
+	stack_t *new_node;
+
+	new_node = malloc(sizeof(stack_t));
+	if (new_node == NULL)
+	{
+		free_all(1,1,1,1);
+		malloc_error();
+	}
+	new_node->n = n;
+	new_node->next = NULL;
+	new_node->prev = NULL;
+	return (new_node);
+
 }

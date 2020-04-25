@@ -4,18 +4,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-typedef struct setting
-{
-	char *arg;
-	char *type;
-	size_t len;
-	unsigned int number_args;
-	unsigned int line_number;
-} setting_t;
-
-extern setting_t info;
-setting_t info;
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -31,6 +19,26 @@ typedef struct stack_s
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
+
+
+typedef struct setting
+{
+	char *type;
+	size_t len;
+	unsigned int number_args;
+	unsigned int line_number;
+	/*memory free*/
+	char *** arguments_;
+	char *cpy_line;
+	FILE *file_;
+	char *buffer_line;
+	/*head of the list*/
+	stack_t ** head_list;
+} setting_t;
+
+extern setting_t info;
+setting_t info;
+
 
 /**
  * struct instruction_s - opcode and its function
@@ -54,19 +62,19 @@ void pint(stack_t **head, unsigned int line_number);
 void swap(stack_t **head, unsigned int line_number);
 
 /* helpers.c */
-int to_number(char *number_string, int *number);
+int to_number(int *number);
 int check_argument(char *opcode);
+stack_t * new_node_(int n);
+
 
 /* errors.c */
 void malloc_error();
-
-void error_on_line();
+void invalid_args();
 void custom_error(char *msg);
 
-void error_on_line();
 void number_arguments_error();
-void file_error();
-
+void file_error(char *file);
+void unknown_ins();
 /* utils.c*/
 int _isspace(int c);
 int _is_empty(char *s);
@@ -74,7 +82,8 @@ char *ft_strdup(char *src);
 void free_(char **parsed_buffer);
 void free_2_(char ***parsed_buffer);
 char ** mall_c();
-void free_all_info(int case_);
+void free_all(int, int, int, int);
+void fill_info(char ***, FILE **, char **, char **);
 
 /* opcode_.c*/
 void (*get_format(char * formato))(stack_t **, unsigned int);

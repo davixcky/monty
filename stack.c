@@ -1,4 +1,5 @@
 #include "monty.h"
+#include "stack.h"
 
 void s_pop(stack_t **head)
 {

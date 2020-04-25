@@ -1,6 +1,4 @@
 #include "monty.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 void malloc_error()
 {
@@ -14,24 +12,21 @@ void number_arguments_error()
 	exit(EXIT_FAILURE);
 }
 
-void custom_error(char *msg)
-{
-	fprintf(stderr, "%s\n", msg);
-	free(msg);
-	exit(EXIT_FAILURE);
-}
-
-void file_error()
-{
-	fprintf(stderr, "Error: Can't open file %s\n", info.name_file);
-	exit(EXIT_FAILURE);
-}
-
-void error_on_line()
+void unknown_ins()
 {
 	fprintf(stderr, "L%u: unknown instruction %s\n", info.line_number, info.type);
-	//free_all_info(0);
-	//free_all_info(1);
+	free_all(1,1,1,1);
+	exit(EXIT_FAILURE);
+}
+void file_error(char *file)
+{
+	fprintf(stderr, "Error: Can't open file %s\n", file);
 	exit(EXIT_FAILURE);
 }
 
+void invalid_args()
+{
+	fprintf(stderr,"L%d: usage: push integer\n", info.line_number);
+	free_all(1,1,1,1);
+	exit(EXIT_FAILURE);
+}
