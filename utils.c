@@ -28,10 +28,8 @@ char *ft_strdup(char *src)
 		len++;
 	str = malloc(len + 1);
 	if (str == NULL)
-	{
-		free(str);
 		malloc_error();
-	}
+
 	p = str;
 	while (*src)
 		*p++ = *src++;
@@ -53,14 +51,14 @@ void free_2_(char ***parsed_buffer)
 {
 	if (*parsed_buffer != NULL)
 		free_(*parsed_buffer);
-	mall_c();
+	*parsed_buffer = NULL;
 }
 
 char ** mall_c()
 {
 	char **arguments_;
 
-	arguments_ = malloc (4 * sizeof(char*));
+	arguments_ = malloc (3 * sizeof(char*));
 	if (arguments_ == NULL)
 		malloc_error();
 	return arguments_;
