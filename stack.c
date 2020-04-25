@@ -1,6 +1,23 @@
 #include "monty.h"
 #include "stack.h"
 
+
+void s_add(stack_t **head)
+{
+	stack_t *tail, *prev;
+	int a, b;
+
+	tail = *info.tail_list;
+	prev = tail->prev;
+
+	a = tail->n;
+	b = tail->prev->n;
+	prev->n = a + b;
+	free(tail);
+	prev->next = NULL;
+	*info.tail_list = prev;
+
+}
 void s_pop(stack_t **head)
 {
 	(void) head;

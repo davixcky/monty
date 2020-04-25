@@ -80,6 +80,7 @@ void file_error(char *file);
 void unknown_ins();
 void pop_error();
 void swap_error();
+void add_error();
 
 /* utils.c*/
 int _isspace(int c);

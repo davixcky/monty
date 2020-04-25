@@ -23,6 +23,13 @@ void file_error(char *file)
 	fprintf(stderr, "Error: Can't open file %s\n", file);
 	exit(EXIT_FAILURE);
 }
+void add_error()
+{
+	fprintf(stderr,"L%d: can't add, stack too short\n", info.line_number);
+	exit(EXIT_FAILURE);
+}
+
+
 void pop_error()
 {
 	fprintf(stderr,"L%d: can't pop an stack empty\n", info.line_number);

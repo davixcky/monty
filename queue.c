@@ -1,6 +1,9 @@
 #include "monty.h"
 #include "queue.h"
 
+void q_add(stack_t **head)
+{
+}
 void q_pop(stack_t **head)
 {
 	stack_t *current;

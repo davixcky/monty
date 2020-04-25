@@ -1,14 +1,9 @@
-nop
+add
 push 1
-pall
-swap
-pall
+push 2
+push 3
 push 4
-pop
+push 5
 pall
-hehehheehheh hehe hehe 
-pint
-push heheh 0
+add
 pall
-
-
