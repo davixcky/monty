@@ -11,11 +11,6 @@ typedef struct setting
 	size_t len;
 	unsigned int number_args;
 	unsigned int line_number;
-	char *name_file;
-	char **arguments_;
-	char *buffer_line;
-	char *cpy_line;
-	FILE *file_;
 } setting_t;
 
 extern setting_t info;
@@ -61,12 +56,11 @@ int to_number(char *number_string, int *number);
 
 /* errors.c */
 void malloc_error();
-<<<<<<< Updated upstream
-void error_on_line(unsigned int line, char *opcode);
-void custom_error(char *msg);
-=======
+
 void error_on_line();
->>>>>>> Stashed changes
+void custom_error(char *msg);
+
+void error_on_line();
 void number_arguments_error();
 void file_error();
 
