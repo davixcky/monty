@@ -21,6 +21,21 @@ typedef struct stack_s
 } stack_t;
 
 
+/**
+ * struct setting - representation of  heap
+ *@type: type of list stack or queue
+ *@len: len of list
+ *@number_args: number of args after parsing
+ *@line_number: line of executed command
+ *@arguments_: arguments after parsing
+ *@cpy_line: cpy of line  after getline
+ *@file_: file executed
+ *@buffer_line: line allocated by getline
+ *@head_list: head of the list
+ *@tail_list: tail of the list
+ * Description: doubly linked list node structure
+ * for stack, queues, LIFO, FIFO Holberton project
+ */
 typedef struct setting
 {
 	char *type;
@@ -28,12 +43,12 @@ typedef struct setting
 	unsigned int number_args;
 	unsigned int line_number;
 	/*memory free*/
-	char *** arguments_;
+	char ***arguments_;
 	char *cpy_line;
 	FILE *file_;
 	char *buffer_line;
 	/*head of the list*/
-	stack_t ** head_list, **tail_list;
+	stack_t **head_list, **tail_list;
 } setting_t;
 
 extern setting_t info;
@@ -71,29 +86,29 @@ int to_number(int *number);
 int check_argument(char *opcode);
 
 /*execute*/
-void execute_file();
-void execute_line_();
-void initilize_heap_();
+void execute_file(void);
+void execute_line_(void);
+void initilize_heap_(void);
 
 
 /*node.c*/
-stack_t * new_node_(int n);
-void free_dlistint();
+stack_t *new_node_(int n);
+void free_dlistint(void);
 stack_t *add_dnodeint_end(stack_t **head, int n);
 
 
 /* errors.c */
-void malloc_error();
-void invalid_args();
-void pint_error();
-void number_arguments_error();
+void malloc_error(void);
+void invalid_args(void);
+void pint_error(void);
+void number_arguments_error(void);
 void file_error(char *msg);
 
 /*errors_2.c*/
-void unknown_ins();
-void pop_error();
-void swap_error();
-void add_error();
+void unknown_ins(void);
+void pop_error(void);
+void swap_error(void);
+void add_error(void);
 
 
 /* utils.c*/
@@ -104,17 +119,16 @@ char *ft_strdup(char *src);
 /*memory_clean.c*/
 void free_(char **parsed_buffer);
 void free_2_(char ***parsed_buffer);
-char ** mall_c(int a);
+char **mall_c(int a);
 void free_all(int, int, int, int, int);
 void fill_info(char ***, FILE **, char **, char **);
 
 /* get_command.c*/
-void (*get_format(char * formato))(stack_t **, unsigned int);
+void (*get_format(char *formato))(stack_t **, unsigned int);
 
 /*read_line.c*/
 void parser(char *buffer_line, char **pieces);
 
 
-
-
 #endif /* MONTY_H */
+

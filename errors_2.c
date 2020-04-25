@@ -1,25 +1,39 @@
 #include "monty.h"
-
-void pop_error()
+/**
+ *pop_error - pop error
+ *Return: Nothing
+ */
+void pop_error(void)
 {
-	fprintf(stderr,"L%d: can't pop an stack empty\n", info.line_number);
+	fprintf(stderr, "L%d: can't pop an stack empty\n", info.line_number);
 	exit(EXIT_FAILURE);
 
 }
-
-void swap_error()
+/**
+ *swap_error - pop error
+ *Return: Nothing
+ */
+void swap_error(void)
 {
-	fprintf(stderr,"L%d: can't swap, stack too short\n", info.line_number);
+	fprintf(stderr, "L%d: can't swap, stack too short\n", info.line_number);
 	exit(EXIT_FAILURE);
 }
-void pint_error()
+/**
+ *pint_error - pop error
+ *Return: Nothing
+ */
+void pint_error(void)
 {
-	fprintf(stderr,"L%d: can't pint, stack empty\n", info.line_number);
+	fprintf(stderr, "L%d: can't pint, stack empty\n", info.line_number);
 	exit(EXIT_FAILURE);
 }
-void invalid_args()
+/**
+ *invalid_args - pop error
+ *Return: Nothing
+ */
+void invalid_args(void)
 {
-	fprintf(stderr,"L%d: usage: push integer\n", info.line_number);
-	free_all(1,1,1,1,1);
+	fprintf(stderr, "L%d: usage: push integer\n", info.line_number);
+	free_all(1, 1, 1, 1, 1);
 	exit(EXIT_FAILURE);
 }

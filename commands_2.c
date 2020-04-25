@@ -1,6 +1,12 @@
 #include "monty.h"
 #include "stack.h"
 #include "queue.h"
+/**
+ *add - add two last elements
+ *@head: head of the list
+ *@line_number: line_number
+ *Return: Nothing
+ */
 
 void add(stack_t **head, unsigned int line_number)
 {
@@ -8,7 +14,7 @@ void add(stack_t **head, unsigned int line_number)
 
 	if (info.len < 2)
 	{
-		free_all(1,1,1,1,1);
+		free_all(1, 1, 1, 1, 1);
 		add_error();
 	}
 
@@ -17,6 +23,12 @@ void add(stack_t **head, unsigned int line_number)
 	else
 		q_add(head);
 }
+/**
+ *swap - swap last two numbers
+ *@head: head of the list
+ *@line_number: line_number
+ *Return: Nothing
+ */
 
 void swap(stack_t **head, unsigned int line_number)
 {
@@ -24,7 +36,7 @@ void swap(stack_t **head, unsigned int line_number)
 
 	if (info.len < 2)
 	{
-		free_all(1,1,1,1,1);
+		free_all(1, 1, 1, 1, 1);
 		swap_error();
 	}
 

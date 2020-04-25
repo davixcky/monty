@@ -1,6 +1,9 @@
 #include "monty.h"
-
-void initilize_heap_()
+/**
+ *initilize_heap_ - initilize variables
+ *Return: return nothing
+ */
+void initilize_heap_(void)
 {
 	info.type = "stack";
 	info.len = 0;
@@ -11,7 +14,11 @@ void initilize_heap_()
 	info.buffer_line = NULL;
 
 }
-void execute_file()
+/**
+ *execute_file - execute_file
+ *Return: exit if error
+ */
+void execute_file(void)
 {
 	char *buffer_line;
 	size_t n_bytes_line;
@@ -21,7 +28,7 @@ void execute_file()
 	{
 		if (getline(&buffer_line, &n_bytes_line, info.file_) == EOF)
 		{
-			free_all(1,1,1,1,1);
+			free_all(1, 1, 1, 1, 1);
 			break;
 		}
 
@@ -35,8 +42,11 @@ void execute_file()
 	}
 
 }
-
-void execute_line_()
+/**
+ *execute_line_ - execute line of the file
+ *Return: return error if found
+ */
+void execute_line_(void)
 {
 	char *cpy_line, **arguments_;
 	void (*f)(stack_t **, unsigned int);
@@ -53,10 +63,9 @@ void execute_line_()
 	f = get_format(arguments_[0]);
 	if (f == NULL)
 		unknown_ins();
-
 	f(info.head_list, info.line_number);
 	info.line_number++;
-	free_all(1,1,0,0,0);
+	free_all(1, 1, 0, 0, 0);
 	info.arguments_ = NULL;
 	info.cpy_line = NULL;
 
