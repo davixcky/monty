@@ -16,7 +16,6 @@ void push(stack_t **head, unsigned int line_number)
 {
 	(void) line_number;
 	int n;
-	stack_t *new_node, *prev;
 	char **args = *info.arguments_;
 	printf("dentro del push info.arg %s\n",args[1]);
 	if (check_argument("push") != 1 || to_number(&n) != 1)
@@ -24,19 +23,7 @@ void push(stack_t **head, unsigned int line_number)
 		printf("entro aqui\n");
 		invalid_args();
 	}
-	info.len++;
-	new_node = new_node_(atoi(args[1]));
-	if (head == NULL)
-	{
-		*head = new_node;
-		return;
-	}
-	/*move only if args is valid*/
-	for (; *head != NULL; head = &(*head)->next)
-		prev = *head;
-	new_node->prev = prev;
-	*head = new_node;
-
+	add_dnodeint_end(head, n);
 }
 
 void pop(stack_t **head, unsigned int line_number)
@@ -87,3 +74,44 @@ void swap(stack_t **head, unsigned int line_number)
 		q_swap(head);
 }
 
+stack_t *add_dnodeint_end(stack_t **head, int n)
+{
+	stack_t *new_node, *temp_node;
+
+	new_node = new_node_(n);
+	temp_node = *info.head_list;
+	if (*head == NULL)
+	{
+		*head = new_node;
+		*info.tail_list = new_node;
+		printf("nuevo valor tail %d\n",(*info.tail_list)->n);
+
+		return (new_node);
+	}
+	while (temp_node && temp_node->next)
+	{
+		temp_node = temp_node->next;
+	}
+	temp_node->next = new_node;
+	new_node->prev = temp_node;
+
+	*info.tail_list = new_node;
+	printf("nuevo valor tail %d\n",(*info.tail_list)->n);
+	return (new_node);
+}
+
+void free_dlistint()
+{
+	stack_t *temp, *head;
+	temp = *info.head_list;
+	head =  *info.head_list;
+
+	while (head && head->next)
+	{
+		head = head->next;
+		free(temp);
+		temp = head;
+	}
+	free(temp);
+	head = NULL;
+}

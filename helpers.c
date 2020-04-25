@@ -64,18 +64,3 @@ stack_t * new_node_(int n)
 
 }
 
-
-void free_dlistint()
-{
-	stack_t *temp, *head;
-	temp = *info.head_list;
-	head = *info.head_list;
-	while (head && head->next)
-	{
-		head = head->next;
-		free(temp);
-		temp = head;
-	}
-	free(*info.head_list);
-	*info.head_list = NULL;
-}

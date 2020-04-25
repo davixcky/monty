@@ -33,7 +33,7 @@ typedef struct setting
 	FILE *file_;
 	char *buffer_line;
 	/*head of the list*/
-	stack_t ** head_list;
+	stack_t ** head_list, **tail_list;
 } setting_t;
 
 extern setting_t info;
@@ -67,6 +67,7 @@ int to_number(int *number);
 int check_argument(char *opcode);
 stack_t * new_node_(int n);
 void free_dlistint();
+stack_t *add_dnodeint_end(stack_t **head, int n);
 
 
 /* errors.c */
