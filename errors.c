@@ -14,7 +14,7 @@ void number_arguments_error()
 
 void unknown_ins()
 {
-	fprintf(stderr, "L%u: unknown instruction %s\n", info.line_number, info.type);
+	fprintf(stderr, "L%u: unknown instruction %s\n", info.line_number, *(info.arguments_[0]));
 	free_all(1,1,1,1,1);
 	exit(EXIT_FAILURE);
 }
@@ -22,6 +22,12 @@ void file_error(char *file)
 {
 	fprintf(stderr, "Error: Can't open file %s\n", file);
 	exit(EXIT_FAILURE);
+}
+void pop_error()
+{
+	fprintf(stderr,"L%d: can't pop an stack empty\n", info.line_number);
+	exit(EXIT_FAILURE);
+
 }
 void pint_error()
 {

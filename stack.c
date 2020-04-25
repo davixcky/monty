@@ -3,25 +3,21 @@
 
 void s_pop(stack_t **head)
 {
+	(void) head;
 	stack_t *second_last;
 
-	if ((*head)->next == NULL)
-	{
-		free(*head);
-		*head = NULL;
-	}
+	second_last = (*info.tail_list)->prev;
+	if (second_last != NULL)
+		second_last->next = NULL;
+	free(*info.tail_list);
+	*info.tail_list = second_last;
 
-	second_last = *head;
-	while(second_last->next->next != NULL)
-		second_last = second_last->next;
-
-	free(second_last->next);
-	second_last->next = NULL;
 }
 
 
 void s_print_all(stack_t **head)
 {
+	(void) head;
 	stack_t *tail;
 
 	tail = *info.tail_list;

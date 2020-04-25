@@ -29,7 +29,8 @@ void pop(stack_t **head, unsigned int line_number)
 
 	if (info.len == 0)
 	{
-		//asprintf(&msg, "L%u: can't pop an empty stack", line_number);
+		free_all(1,1,1,1,1);
+		pop_error();
 	}
 
 	if (strcmp(info.type, "stack") == 0)

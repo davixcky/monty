@@ -77,6 +77,7 @@ void pint_error();
 void number_arguments_error();
 void file_error(char *file);
 void unknown_ins();
+void pop_error();
 
 /* utils.c*/
 int _isspace(int c);

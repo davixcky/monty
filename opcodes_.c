@@ -8,11 +8,12 @@ void (*get_format(char *formato))(stack_t **, unsigned int)
 		{"push", push},
 		{"pall",print_all},
 		{"pint",pint},
+		{"pop",pop},
 		{"NULLo", NULL}
 	};
 
 	i = 0;
-	while (i < 3)
+	while (i < 4)
 	{
 		if (strcmp(formato, opcodes_cases[i].opcode) == 0)
 			return (opcodes_cases[i].f);
