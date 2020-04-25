@@ -17,10 +17,8 @@ void push(stack_t **head, unsigned int line_number)
 	(void) line_number;
 	int n;
 	char **args = *info.arguments_;
-	printf("dentro del push info.arg %s\n",args[1]);
 	if (check_argument("push") != 1 || to_number(&n) != 1)
 	{
-		printf("entro aqui\n");
 		invalid_args();
 	}
 	add_dnodeint_end(head, n);
@@ -84,8 +82,7 @@ stack_t *add_dnodeint_end(stack_t **head, int n)
 	{
 		*head = new_node;
 		*info.tail_list = new_node;
-		printf("nuevo valor tail %d\n",(*info.tail_list)->n);
-
+		info.len++;
 		return (new_node);
 	}
 	while (temp_node && temp_node->next)
@@ -96,7 +93,7 @@ stack_t *add_dnodeint_end(stack_t **head, int n)
 	new_node->prev = temp_node;
 
 	*info.tail_list = new_node;
-	printf("nuevo valor tail %d\n",(*info.tail_list)->n);
+	info.len++;
 	return (new_node);
 }
 

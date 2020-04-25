@@ -42,12 +42,6 @@ int main(int argc, char * argv[])
 
 			parser(cpy_line, arguments_);
 
-			printf("----------------------------\n");
-			for(largo = 0;arguments_[largo] != NULL; largo++)
-			{
-				printf("%s\n", arguments_[largo]);
-			}
-			printf("-----------------------\n");
 
 			fill_info(&arguments_, &file_, &buffer_line, &cpy_line);
 

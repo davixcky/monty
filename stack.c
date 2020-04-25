@@ -30,11 +30,11 @@ void s_print_all(stack_t **head)
 		return;
 	while(tail->prev != NULL && tail)
 	{
-		printf("valor en stack es %d\n", tail->n);
+		printf("%d\n", tail->n);
 		tail = tail->prev;
 	}
 	if (tail != NULL)
-		printf("valor en el stack es %d\n", tail->n);
+		printf("%d\n", tail->n);
 }
 
 
