@@ -19,8 +19,11 @@ void file_error()
 	exit(EXIT_FAILURE);
 }
 
-void error_on_line(unsigned int line, char *opcode)
+void error_on_line()
 {
-	fprintf(stderr, "L%u: unknown instruction %s\n", line, opcode);
+	fprintf(stderr, "L%u: unknown instruction %s\n", info.line_number, info.type);
+	//free_all_info(0);
+	//free_all_info(1);
 	exit(EXIT_FAILURE);
 }
+

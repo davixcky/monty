@@ -4,14 +4,18 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
 typedef struct setting
 {
 	char *arg;
 	char *type;
 	size_t len;
+	unsigned int number_args;
 	unsigned int line_number;
 	char *name_file;
+	char **arguments_;
+	char *buffer_line;
+	char *cpy_line;
+	FILE *file_;
 } setting_t;
 
 extern setting_t info;
@@ -57,8 +61,12 @@ int to_number(char *number_string, int *number);
 
 /* errors.c */
 void malloc_error();
+<<<<<<< Updated upstream
 void error_on_line(unsigned int line, char *opcode);
 void custom_error(char *msg);
+=======
+void error_on_line();
+>>>>>>> Stashed changes
 void number_arguments_error();
 void file_error();
 
@@ -66,10 +74,26 @@ void file_error();
 int _isspace(int c);
 int _is_empty(char *s);
 char *ft_strdup(char *src);
+void free_(char **parsed_buffer);
+void free_2_(char ***parsed_buffer);
+char ** mall_c();
+void free_all_info(int case_);
 
 /* opcode_.c*/
-void (*get_format(char *format))(stack_t **, unsigned int);
+void (*get_format(char * formato))(stack_t **, unsigned int);
 
 /*string_utils.c*/
+char *_strcpy(char *dest, char *src);
+char *_strcat(char *dest,  char *src);
+int _strncmp(char *s1, char *s2, size_t n);
+int _strcmp(char *s1, char *s2);
+
+/*parser.c*/
+
+void parser(char *buffer_line, char **pieces);
+
+
+
+void prueba(stack_t ** stack, unsigned int);
 
 #endif /* MONTY_H */
