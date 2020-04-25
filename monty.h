@@ -54,18 +54,29 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/* general.c */
+
+/* commands.c */
 void print_all(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pop(stack_t **head, unsigned int line_number);
 void pint(stack_t **head, unsigned int line_number);
 void swap(stack_t **head, unsigned int line_number);
+
+/*commands_2.c*/
 void add(stack_t **head, unsigned int line_number);
 void nop(stack_t **head, unsigned int line_number);
 
 /* helpers.c */
 int to_number(int *number);
 int check_argument(char *opcode);
+
+/*execute*/
+void execute_file();
+void execute_line_();
+void initilize_heap_();
+
+
+/*node.c*/
 stack_t * new_node_(int n);
 void free_dlistint();
 stack_t *add_dnodeint_end(stack_t **head, int n);
@@ -76,37 +87,34 @@ void malloc_error();
 void invalid_args();
 void pint_error();
 void number_arguments_error();
-void file_error(char *file);
+void file_error(char *msg);
+
+/*errors_2.c*/
 void unknown_ins();
 void pop_error();
 void swap_error();
 void add_error();
 
+
 /* utils.c*/
 int _isspace(int c);
 int _is_empty(char *s);
 char *ft_strdup(char *src);
+
+/*memory_clean.c*/
 void free_(char **parsed_buffer);
 void free_2_(char ***parsed_buffer);
 char ** mall_c(int a);
 void free_all(int, int, int, int, int);
 void fill_info(char ***, FILE **, char **, char **);
 
-/* opcode_.c*/
+/* get_command.c*/
 void (*get_format(char * formato))(stack_t **, unsigned int);
 
-/*string_utils.c*/
-char *_strcpy(char *dest, char *src);
-char *_strcat(char *dest,  char *src);
-int _strncmp(char *s1, char *s2, size_t n);
-int _strcmp(char *s1, char *s2);
-
-/*parser.c*/
-
+/*read_line.c*/
 void parser(char *buffer_line, char **pieces);
 
 
 
-void prueba(stack_t ** stack, unsigned int);
 
 #endif /* MONTY_H */

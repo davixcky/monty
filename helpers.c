@@ -40,19 +40,3 @@ int check_argument(char *op_code)
 	return (0);/* 1 success 0 otherwise*/
 }
 
-stack_t * new_node_(int n)
-{
-	stack_t *new_node;
-
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
-	{
-		free_all(1,1,1,1,1);
-		malloc_error();
-	}
-	new_node->n = n;
-	new_node->next = NULL;
-	new_node->prev = NULL;
-	return (new_node);
-}
-

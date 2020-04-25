@@ -6,6 +6,7 @@ void s_add(stack_t **head)
 {
 	stack_t *tail, *prev;
 	int a, b;
+	(void) head;
 
 	tail = *info.tail_list;
 	prev = tail->prev;
@@ -20,8 +21,9 @@ void s_add(stack_t **head)
 }
 void s_pop(stack_t **head)
 {
-	(void) head;
 	stack_t *second_last;
+	(void) head;
+
 	if (info.len == 1)
 	{
 		free(*info.tail_list), *info.tail_list = NULL;
@@ -39,8 +41,8 @@ void s_pop(stack_t **head)
 
 void s_print_all(stack_t **head)
 {
-	(void) head;
 	stack_t *tail;
+	(void) head;
 
 	tail = *info.tail_list;
 
@@ -72,6 +74,7 @@ void s_swap(stack_t **head)
 {
 	stack_t *tail;
 	int n;
+	(void) head;
 
 	tail = *info.tail_list;
 
