@@ -1,6 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
-#define _GNU_SOURCE
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -53,11 +53,12 @@ void push(stack_t **stack, unsigned int line_number); //push
 void pop(stack_t **head, unsigned int line_number); //pop
 
 /* strings.c */
-int to_number(char *number_string, char *status);
+int to_number(char *number_string, int *number);
 
 /* errors.c */
 void malloc_error();
 void error_on_line(unsigned int line, char *opcode);
+void custom_error(char *msg);
 void number_arguments_error();
 void file_error();
 
