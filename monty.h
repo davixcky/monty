@@ -1,6 +1,20 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+typedef struct setting
+{
+	char *arg;
+	char *type;
+	size_t len;
+	unsigned int line_number;
+} setting_t;
+
+extern setting_t info;
+setting_t info;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -31,6 +45,19 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/* general.c */
+void print_all(stack_t **stack, unsigned int line_number); //pall
+void push(stack_t **stack, unsigned int line_number); //push
+void pop(stack_t **head, unsigned int line_number); //pop
+
+/* strings.c */
+int to_number(char *number_string, char *status);
+
+/* errors.c */
+void malloc_error();
+void error_on_line(unsigned int line, char *opcode);
+
 
 
 
