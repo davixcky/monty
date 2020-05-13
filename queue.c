@@ -2,13 +2,13 @@
 
 stack_t *q_pop(stack_t **stack)
 {
-  return *stack;
+	return *stack;
 }
 
 void q_print_all(stack_t **head)
 {
-  stack_t *h;
+	stack_t *h;
 
-  for (h = *head; h != NULL; h = h->next)
-    printf("%d\n", h->n);
+	for (h = *head; h != NULL; h = h->next)
+		printf("%d\n", h->n);
 }

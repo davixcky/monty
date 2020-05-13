@@ -59,6 +59,4 @@ void malloc_error();
 void error_on_line(unsigned int line, char *opcode);
 
 
-
-
 #endif /* MONTY_H */
