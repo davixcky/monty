@@ -13,6 +13,14 @@ void number_arguments_error()
 	fprintf(stderr, "USAGE: monty file\n");
 	exit(EXIT_FAILURE);
 }
+
+void custom_error(char *msg)
+{
+	fprintf(stderr, "%s\n", msg);
+	free(msg);
+	exit(EXIT_FAILURE);
+}
+
 void file_error()
 {
 	fprintf(stderr, "Error: Can't open file %s\n", info.name_file);
