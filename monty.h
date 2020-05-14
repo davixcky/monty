@@ -48,12 +48,15 @@ typedef struct instruction_s
 } instruction_t;
 
 /* general.c */
-void print_all(stack_t **stack, unsigned int line_number); //pall
-void push(stack_t **stack, unsigned int line_number); //push
-void pop(stack_t **head, unsigned int line_number); //pop
+void print_all(stack_t **stack, unsigned int line_number);
+void push(stack_t **stack, unsigned int line_number);
+void pop(stack_t **head, unsigned int line_number);
+void pint(stack_t **head, unsigned int line_number);
+void swap(stack_t **head, unsigned int line_number);
 
-/* strings.c */
+/* helpers.c */
 int to_number(char *number_string, int *number);
+int check_argument(char *opcode);
 
 /* errors.c */
 void malloc_error();
