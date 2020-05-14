@@ -28,7 +28,10 @@ void execute_file()
 		if (buffer_line != NULL)
 		{
 			if (_is_empty(buffer_line) == 1)
+			{
+				info.line_number++;
 				continue;
+			}
 			info.buffer_line = buffer_line;
 			execute_line_();
 		}
