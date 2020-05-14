@@ -2,9 +2,8 @@
 
 void pop_error()
 {
-	fprintf(stderr,"L%d: can't pop an stack empty\n", info.line_number);
+	fprintf(stderr,"L%d: can't pop an empty stack\n", info.line_number);
 	exit(EXIT_FAILURE);
-
 }
 
 void swap_error()
