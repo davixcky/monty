@@ -5,7 +5,9 @@
 
 
 /* queue.c */
-stack_t *q_pop(stack_t **head); //pop
-void q_print_all(stack_t **head); //print all
+void q_pop(stack_t **head);
+void q_print_all(stack_t **head);
+void q_pint(stack_t **head);
+void q_swap(stack_t **head);
 
 #endif /* QUEUE_H */

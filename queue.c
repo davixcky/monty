@@ -1,8 +1,14 @@
 #include "monty.h"
+#include "queue.h"
 
-stack_t *q_pop(stack_t **stack)
+void q_pop(stack_t **head)
 {
-	return *stack;
+	stack_t *current;
+
+	current = *head;
+	current->prev = NULL;
+	free(*head);
+	*head = current;
 }
 
 void q_print_all(stack_t **head)
@@ -12,3 +18,20 @@ void q_print_all(stack_t **head)
 	for (h = *head; h != NULL; h = h->next)
 		printf("%d\n", h->n);
 }
+
+void q_pint(stack_t **head)
+{
+	printf("%d\n", (*head)->n);
+}
+
+void q_swap(stack_t **head)
+{
+	int n;
+	stack_t *tmp;
+
+	tmp = *head;
+	n = tmp->n;
+	tmp->n = tmp->next->n;
+	tmp->next->n = n;
+}
+
