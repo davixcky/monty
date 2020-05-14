@@ -22,8 +22,14 @@ int main(int argc, char * argv[])
 	arguments_ = mall_c();
 
 	info.line_number = 0;
-	while (getline(&buffer_line, &n_bytes_line, file_) != EOF)
+	while (1)
 	{
+		if (getline(&buffer_line, &n_bytes_line, file_) == EOF)
+		{
+			free_all(1,1,1,1);
+			break;
+		}
+
 		if (buffer_line != NULL)
 		{
 			if (_is_empty(buffer_line) == 1)
@@ -36,29 +42,15 @@ int main(int argc, char * argv[])
 				printf("%s\n", arguments_[largo]);
 			}
 			printf("-----------------------\n");
-
+			fill_info(&arguments_, &file_, &buffer_line, &cpy_line);
 			f = get_format(arguments_[0]);
 			if (f == NULL)
-			{
-				fprintf(stderr, "L%u: unknown instruction %s\n", info.line_number, info.type);
-				free_2_(&arguments_);
-				free(arguments_), arguments_ = NULL;
-				free(cpy_line), cpy_line = NULL;
-				fclose(file_);
-				free(buffer_line), buffer_line = NULL;
-				exit(EXIT_FAILURE);
-			}
+				unknown_ins();
 
-			//			free_2_(&arguments_);
-			free(arguments_), arguments_ = NULL;
-			free(cpy_line), cpy_line = NULL;
+			free_all(1,1,0,0);
 			arguments_ = mall_c();
-
 		}
 
 	}
-	free(arguments_);
-	fclose(file_);
-	free(buffer_line), buffer_line = NULL;
 	return (0);
 }
