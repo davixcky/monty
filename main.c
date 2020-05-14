@@ -41,6 +41,7 @@ int main(int argc, char * argv[])
 			}
 			printf("-----------------------\n");
 			info.type = arguments_[0];
+			info.arg = arguments_[1];
 			info.line_number++;
 			//	info.arguments_ = arguments_;
 			f = get_format(arguments_[0]);
@@ -66,8 +67,13 @@ int main(int argc, char * argv[])
 					free(buffer_line), buffer_line = NULL;
 					exit(EXIT_FAILURE);
 				}
+				printf("aqui esta\n");
+				f(&head_list, atoi(arguments_ [1]));
 			}
-			f(&head_list, info.line_number);
+			else if (info.number_args == 1)
+			{
+				f(&head_list, 0);
+			}
 			free_2_(&arguments_);
 			free(arguments_), arguments_ = NULL;
 			arguments_ = mall_c();
