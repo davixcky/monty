@@ -1,6 +1,11 @@
 #include "monty.h"
 
-
+/**
+ *add_dnodeint_end - add node to the end of list
+ *@head: head of the list
+ *@n: number to be added to the node
+ *Return: return the new node
+ */
 stack_t *add_dnodeint_end(stack_t **head, int n)
 {
 	stack_t *new_node, *temp_node;
@@ -25,10 +30,14 @@ stack_t *add_dnodeint_end(stack_t **head, int n)
 	info.len++;
 	return (new_node);
 }
-
-void free_dlistint()
+/**
+ *free_dlistint - free list
+ *Return: nothing
+ */
+void free_dlistint(void)
 {
 	stack_t *temp, *head;
+
 	temp = *info.head_list;
 	head =  *info.head_list;
 
@@ -41,15 +50,19 @@ void free_dlistint()
 	free(temp);
 	head = NULL;
 }
-
-stack_t * new_node_(int n)
+/**
+ *new_node_ - function for creating node
+ *@n: number to be added
+ *Return: new node
+ */
+stack_t *new_node_(int n)
 {
 	stack_t *new_node;
 
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
-		free_all(1,1,1,1,1);
+		free_all(1, 1, 1, 1, 1);
 		malloc_error();
 	}
 	new_node->n = n;

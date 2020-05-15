@@ -1,6 +1,10 @@
 #include "monty.h"
 #include <ctype.h>
-
+/**
+ * to_number - check if is a digit
+ *@number: number to be converted
+ *Return: return 0 if fail 1 success
+ */
 int to_number(int *number)
 {
 	char *tmp;
@@ -29,13 +33,19 @@ int to_number(int *number)
 	/*1 sucesss 0 no digit*/
 }
 
+
+/**
+ *check_argument - check if arguments_
+ *@op_code: arguments_
+ *Return: return 1 success 0 error
+ */
 int check_argument(char *op_code)
 {
 	char *codes[] = {"push"};
 	int i;
 
 	for (i = 0; codes[i] != NULL; i++)
-		if (strcmp(op_code,codes[i]) == 0)
+		if (strcmp(op_code, codes[i]) == 0)
 			return (1);
 	return (0);/* 1 success 0 otherwise*/
 }

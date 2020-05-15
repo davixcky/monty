@@ -1,7 +1,11 @@
 #include "monty.h"
 #include "stack.h"
 
-
+/**
+ *s_add - add command
+ *@head: head of the list
+ *Return: Nothing
+ */
 void s_add(stack_t **head)
 {
 	stack_t *tail, *prev;
@@ -19,6 +23,11 @@ void s_add(stack_t **head)
 	*info.tail_list = prev;
 
 }
+/**
+ *s_pop - pop command
+ *@head: head of the list
+ *Return: Nothing
+ */
 void s_pop(stack_t **head)
 {
 	stack_t *second_last;
@@ -37,7 +46,11 @@ void s_pop(stack_t **head)
 	*info.tail_list = second_last;
 
 }
-
+/**
+ *s_print_all - s_print_all command
+ *@head: head of the list
+ *Return: Nothing
+ */
 
 void s_print_all(stack_t **head)
 {
@@ -48,7 +61,7 @@ void s_print_all(stack_t **head)
 
 	if (tail == NULL)
 		return;
-	while(tail->prev != NULL && tail)
+	while (tail->prev != NULL && tail)
 	{
 		printf("%d\n", tail->n);
 		tail = tail->prev;
@@ -57,19 +70,27 @@ void s_print_all(stack_t **head)
 		printf("%d\n", tail->n);
 }
 
-
+/**
+ *s_pint - s_pint command
+ *@head: head of the list
+ *Return: Nothing
+ */
 void s_pint(stack_t **head)
 {
 	stack_t *tail;
 
 	tail = *head;
-	while(tail->next != NULL)
+	while (tail->next != NULL)
 		tail = tail->next;
 
 	printf("%d\n", tail->n);
 }
 
-
+/**
+ *s_swap - s_swap command
+ *@head: head of the list
+ *Return: Nothing
+ */
 void s_swap(stack_t **head)
 {
 	stack_t *tail;

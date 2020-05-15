@@ -1,12 +1,17 @@
 #include "monty.h"
 #define TOKEN_DELIMITERS "\t\n\v\f\r "
-
+/**
+ *parser - obtain arguments from line
+ *@buffer_line: line
+ *@pieces: storage for arguments
+ *Return: nothing
+ */
 void parser(char *buffer_line, char **pieces)
 {
 	int i;
 	char *piece;
 
-	piece = strtok(buffer_line,  TOKEN_DELIMITERS );
+	piece = strtok(buffer_line,  TOKEN_DELIMITERS);
 	i = 0;
 	/* at max only 3 letters*/
 	info.number_args = 0;
@@ -18,7 +23,7 @@ void parser(char *buffer_line, char **pieces)
 			pieces[i] = ft_strdup(piece);/*space for the string*/
 		}
 		i++;
-		piece = strtok(NULL,  TOKEN_DELIMITERS );
+		piece = strtok(NULL,  TOKEN_DELIMITERS);
 	}
 	pieces[i] = NULL;
 }

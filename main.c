@@ -1,10 +1,17 @@
 #include "monty.h"
 
-int main(int argc, char * argv[])
+/**
+ *main - main task is to open the file
+ *@argc: number of arguments cmd
+ *@argv: number of commands in cmd
+ *Return: return 0 if no problem exit(1) fail
+ */
+int main(int argc, char *argv[])
 {
 	FILE *file_;
 
-	stack_t * head_list, *tail_list;
+	stack_t *head_list, *tail_list;
+
 	head_list = NULL, tail_list = NULL;
 	info.head_list = &head_list;
 	info.tail_list = &tail_list;
@@ -19,7 +26,7 @@ int main(int argc, char * argv[])
 		file_error(argv[1]);
 	/*execute*/
 	info.file_ = file_;
-	execute_file();;
+	execute_file();
 
 	return (0);
 }
