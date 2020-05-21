@@ -57,17 +57,35 @@ void s_print_all(stack_t **head)
 	stack_t *tail;
 	(void) head;
 
-	tail = *info.tail_list;
-
-	if (tail == NULL)
-		return;
-	while (tail->prev != NULL && tail)
+	if (info.state == 1)
 	{
-		printf("%d\n", tail->n);
-		tail = tail->prev;
+		tail = *info.head_list;
+		if (tail == NULL)
+			return;
+		while (tail->next != NULL && tail)
+		{
+			printf("%d\n", tail->n);
+			
+			tail = tail->next;
+		}
+		if (tail != NULL)
+			printf("%d\n", tail->n);
 	}
-	if (tail != NULL)
-		printf("%d\n", tail->n);
+	else if (info.state == 0)
+	{
+		tail = *info.tail_list;
+		if (tail == NULL)
+			return;
+		while (tail->prev != NULL && tail)
+		{
+			printf("%d\n", tail->n);
+			
+			tail = tail->prev;
+		}
+		if (tail != NULL)
+			printf("%d\n", tail->n);
+	}
+
 }
 
 /**

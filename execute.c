@@ -12,6 +12,7 @@ void initilize_heap_(void)
 	info.cpy_line = NULL;
 	info.file_ = NULL;
 	info.buffer_line = NULL;
+	info.state = 0;
 
 }
 /**

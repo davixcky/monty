@@ -58,3 +58,45 @@ void pchar_(stack_t **head, unsigned int line_number)
 	else
 		q_pchar(head);
 }
+
+/**
+ *print_string - print all elements in the list
+ *@head: head of the list
+ *@line_number: line_number
+ *Return: Nothing
+ */
+
+void print_string(stack_t **head, unsigned int line_number)
+{
+	(void) line_number;
+	if (info.len == 0)
+	{
+		printf("\n");
+		return;
+	}
+
+	if (strcmp(info.type, "stack") == 0)
+		s_print_string(head);
+	else
+		q_print_string(head);
+}
+
+
+void rot_(stack_t **head, unsigned int line_number)
+{
+	static stack_t *temp,*temp_2, *temp_3, *prev;
+
+	(void) line_number;
+	/*info.state = 1;*/
+	if (info.len < 2)
+		return;
+	temp = *info.tail_list;
+	prev = (*info.tail_list)->prev;
+	temp_3 = (*info.head_list)->next;
+	prev->next = NULL;
+	temp->prev = NULL;
+	temp->next = *info.head_list;
+	(*info.head_list)->prev = temp;
+	*info.head_list = temp;
+	*info.tail_list = prev;
+}

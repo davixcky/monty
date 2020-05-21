@@ -47,6 +47,7 @@ typedef struct setting
 	char *cpy_line;
 	FILE *file_;
 	char *buffer_line;
+	int state; /* 0 stack 1 queue*/
 	/*head of the list*/
 	stack_t **head_list, **tail_list;
 } setting_t;
@@ -87,8 +88,8 @@ void mul_(stack_t **head, unsigned int line_number);
 /*commands_3.c*/
 void mod_(stack_t **head, unsigned int line_number);
 void pchar_(stack_t **head, unsigned int line_number);
-
-
+void print_string(stack_t **head, unsigned int line_number);
+void rot_(stack_t **head, unsigned int line_number);
 /* helpers.c */
 int to_number(int *number);
 int check_argument(char *opcode);
@@ -154,12 +155,16 @@ void s_mul(stack_t **head);
 void s_mod(stack_t **head);
 void s_pchar(stack_t **head);
 
+void s_print_string(stack_t **head);
+
 /*queue_2.c*/
 void q_sub(stack_t **head);
 void q_div(stack_t **head);
 void q_mul(stack_t **head);
 void q_mod(stack_t **head);
 void q_pchar(stack_t **head);
+void q_print_string(stack_t **head);
+
 
 #endif /* MONTY_H */
 
