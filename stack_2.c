@@ -16,7 +16,7 @@ void s_sub(stack_t **head)
 
 	a = tail->n;
 	b = tail->prev->n;
-	prev->n = a + b;
+	prev->n = b - a;
 	free(tail);
 	prev->next = NULL;
 	*info.tail_list = prev;

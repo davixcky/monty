@@ -6,7 +6,7 @@
  *@head: head of the list
  *Return: nothing
  */
-void q_add(stack_t **head)
+void q_sub(stack_t **head)
 {
 	(void) head;
 }

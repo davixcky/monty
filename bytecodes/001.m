@@ -1,12 +1,6 @@
 push 1
-pint
-push pruhr 
 push 2
+push 10
 push 3
-push 4
-push 5
+sub
 pall
-pall
-pall
-pall
-

@@ -80,6 +80,7 @@ void swap(stack_t **head, unsigned int line_number);
 /*commands_2.c*/
 void add(stack_t **head, unsigned int line_number);
 void nop(stack_t **head, unsigned int line_number);
+void sub(stack_t **head, unsigned int line_number);
 
 /* helpers.c */
 int to_number(int *number);
@@ -109,6 +110,7 @@ void unknown_ins(void);
 void pop_error(void);
 void swap_error(void);
 void add_error(void);
+void sub_error(void);
 
 
 /* utils.c*/
@@ -129,6 +131,10 @@ void (*get_format(char *formato))(stack_t **, unsigned int);
 /*read_line.c*/
 void parser(char *buffer_line, char **pieces);
 
+/*stack_2.c*/
+void s_sub(stack_t **head);
+/*queue_2.c*/
+void q_sub(stack_t **head);
 
 #endif /* MONTY_H */
 
