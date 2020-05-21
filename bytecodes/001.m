@@ -1,3 +1,2 @@
-#Commentl
-#push 12
-#pall
+push 72
+pchar
