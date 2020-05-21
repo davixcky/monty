@@ -19,3 +19,13 @@ void q_div(stack_t **head)
 {
 	(void) head;
 }
+
+/**
+ *q_mul - add command
+ *@head: head of the list
+ *Return: nothing
+ */
+void q_mul(stack_t **head)
+{
+	(void) head;
+}

@@ -18,6 +18,7 @@ void (*get_format(char *formato))(stack_t **, unsigned int)
 		{"add", add},
 		{"sub", sub},
 		{"div", div_},
+		{"mul", mul_},
 		{"NULLo", NULL}
 	};
 

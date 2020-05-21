@@ -82,6 +82,7 @@ void add(stack_t **head, unsigned int line_number);
 void nop(stack_t **head, unsigned int line_number);
 void sub(stack_t **head, unsigned int line_number);
 void div_(stack_t **head, unsigned int line_number);
+void mul_(stack_t **head, unsigned int line_number);
 
 /* helpers.c */
 int to_number(int *number);
@@ -116,6 +117,7 @@ void sub_error(void);
 /*error_3.c*/
 void div_error(void);
 void div_error_2(void);
+void mul_error(void);
 
 /* utils.c*/
 int _isspace(int c);
@@ -138,9 +140,11 @@ void parser(char *buffer_line, char **pieces);
 /*stack_2.c*/
 void s_sub(stack_t **head);
 void s_div(stack_t **head);
+void s_mul(stack_t **head);
 
 /*queue_2.c*/
 void q_sub(stack_t **head);
 void q_div(stack_t **head);
+void q_mul(stack_t **head);
 #endif /* MONTY_H */
 
