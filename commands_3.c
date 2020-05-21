@@ -25,7 +25,7 @@ void mod_(stack_t **head, unsigned int line_number)
 	}
 
 	if (strcmp(info.type, "stack") == 0)
-		s_mul(head);
+		s_mod(head);
 	else
-		q_mul(head);
+		q_mod(head);
 }
