@@ -88,7 +88,6 @@ void s_mod(stack_t **head)
 	free(tail);
 	prev->next = NULL;
 	*info.tail_list = prev;
-
 }
 
 /**
@@ -104,7 +103,7 @@ void s_pchar(stack_t **head)
 	(void) head;
 	tail = *info.tail_list;
 	a = tail->n;
-	/*printf("%d\n", a);*/
+	printf("%d\n", a);
 
 }
 

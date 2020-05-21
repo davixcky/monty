@@ -51,7 +51,6 @@ void pchar_(stack_t **head, unsigned int line_number)
     {
         free_all(1, 1, 1, 1, 1);
         pchar_error_2();
-
     }
 
 	if (strcmp(info.type, "stack") == 0)
