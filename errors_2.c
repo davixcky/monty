@@ -38,7 +38,7 @@ void invalid_args(void)
 }
 
 /**
- *invalid_args - pop error
+ *sub_error - pop error
  *Return: Nothing
  */
 void sub_error(void)
