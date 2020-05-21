@@ -103,7 +103,7 @@ void s_pchar(stack_t **head)
 	(void) head;
 	tail = *info.tail_list;
 	a = tail->n;
-	printf("%d\n", a);
+	printf("%c\n", a);
 
 }
 
