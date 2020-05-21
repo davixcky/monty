@@ -21,11 +21,12 @@ void (*get_format(char *formato))(stack_t **, unsigned int)
 		{"mul", mul_},
 		{"mod", mod_},
 		{"#", nop},
+    	{"pchar", pchar_},
 		{"NULLo", NULL}
 	};
 
 	i = 0;
-	while (i < 13)
+	while (i < 14)
 	{	
 		if (formato[0] == '#')
 			return nop;
