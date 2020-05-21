@@ -36,3 +36,14 @@ void invalid_args(void)
 	free_all(1, 1, 1, 1, 1);
 	exit(EXIT_FAILURE);
 }
+
+/**
+ *invalid_args - pop error
+ *Return: Nothing
+ */
+void sub_error(void)
+{
+	fprintf(stderr, "L%d: can't sub, stack too short\n", info.line_number);
+	free_all(1, 1, 1, 1, 1);
+	exit(EXIT_FAILURE);
+}
