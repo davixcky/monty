@@ -98,7 +98,7 @@ void div_(stack_t **head, unsigned int line_number)
 }
 
 /**
- *div - swap last two numbers
+ *mul - swap last two numbers
  *@head: head of the list
  *@line_number: line_number
  *Return: Nothing
