@@ -29,3 +29,13 @@ void q_mul(stack_t **head)
 {
 	(void) head;
 }
+
+/**
+ *q_mod - add command
+ *@head: head of the list
+ *Return: nothing
+ */
+void q_mod(stack_t **head)
+{
+	(void) head;
+}

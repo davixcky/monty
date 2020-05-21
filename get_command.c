@@ -19,11 +19,12 @@ void (*get_format(char *formato))(stack_t **, unsigned int)
 		{"sub", sub},
 		{"div", div_},
 		{"mul", mul_},
+		{"mod", mod_},
 		{"NULLo", NULL}
 	};
 
 	i = 0;
-	while (i < 10)
+	while (i < 11)
 	{
 		if (strcmp(formato, opcodes_cases[i].opcode) == 0)
 			return (opcodes_cases[i].f);

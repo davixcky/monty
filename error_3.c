@@ -30,3 +30,12 @@ void mul_error(void)
 	fprintf(stderr, "L%d: can't mul, stack too short\n", info.line_number);
 	exit(EXIT_FAILURE);
 }
+/**
+ *mod_error - pop error
+ *Return: Nothing
+ */
+void mod_error(void)
+{
+	fprintf(stderr, "L%d: can't mod, stack too short\n", info.line_number);
+	exit(EXIT_FAILURE);
+}
