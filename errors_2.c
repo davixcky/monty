@@ -44,6 +44,5 @@ void invalid_args(void)
 void sub_error(void)
 {
 	fprintf(stderr, "L%d: can't sub, stack too short\n", info.line_number);
-	free_all(1, 1, 1, 1, 1);
 	exit(EXIT_FAILURE);
 }
