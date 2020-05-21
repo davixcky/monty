@@ -26,7 +26,9 @@ void (*get_format(char *formato))(stack_t **, unsigned int)
 
 	i = 0;
 	while (i < 12)
-	{
+	{	
+		if (formato[0] == '#')
+			return nop;
 		if (strcmp(formato, opcodes_cases[i].opcode) == 0)
 			return (opcodes_cases[i].f);
 		i++;
