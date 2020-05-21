@@ -86,7 +86,6 @@ void mul_(stack_t **head, unsigned int line_number);
 
 /*commands_3.c*/
 void mod_(stack_t **head, unsigned int line_number);
-void pchar_(stack_t **head, unsigned int line_number);
 
 
 /* helpers.c */
@@ -124,10 +123,6 @@ void div_error(void);
 void div_error_2(void);
 void mul_error(void);
 void mod_error(void);
-void pchar_error(void);
-
-/*error_4.c*/
-void pchar_error_2(void);
 
 /* utils.c*/
 int _isspace(int c);
@@ -152,19 +147,11 @@ void s_sub(stack_t **head);
 void s_div(stack_t **head);
 void s_mul(stack_t **head);
 void s_mod(stack_t **head);
-void s_pchar(stack_t **head);
-
-/*stack_3.c*
-
-
-/*queuue_3.c*/
-
 
 /*queue_2.c*/
 void q_sub(stack_t **head);
 void q_div(stack_t **head);
 void q_mul(stack_t **head);
 void q_mod(stack_t **head);
-void q_pchar(stack_t **head);
 #endif /* MONTY_H */
 

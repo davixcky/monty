@@ -90,21 +90,3 @@ void s_mod(stack_t **head)
 	*info.tail_list = prev;
 
 }
-
-
-/**
- *s_pchar - add command
- *@head: head of the list
- *Return: Nothing
- */
-
-void s_pchar(stack_t **head)
-{
-	stack_t *tail, *prev;
-	int a, b;
-	(void) head;
-	tail = *info.tail_list;
-	a = tail->n;
-	/*printf("%d\n", a);*/
-
-}
