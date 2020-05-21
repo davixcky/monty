@@ -26,7 +26,7 @@ void (*get_format(char *formato))(stack_t **, unsigned int)
 	};
 
 	i = 0;
-	while (i < 14)
+	while (i < 13)
 	{	
 		if (formato[0] == '#')
 			return nop;
