@@ -89,7 +89,7 @@ void div_(stack_t **head, unsigned int line_number)
 	if ((*info.tail_list)->n == 0)
 	{
 		free_all(1, 1, 1, 1, 1);
-		div_error();
+		div_error_2();
 	}
 	if (strcmp(info.type, "stack") == 0)
 		s_div(head);

@@ -115,6 +115,7 @@ void sub_error(void);
 
 /*error_3.c*/
 void div_error(void);
+void div_error_2(void);
 
 /* utils.c*/
 int _isspace(int c);
